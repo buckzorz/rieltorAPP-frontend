@@ -1,0 +1,41 @@
+
+        <div class="ngdialog-message">
+            <div class="">
+                <h3>Новий клієнт</h4>
+            </div>
+            <div class="">&nbsp;</div>
+            <div class="">   
+                <form ng-submit="addclient()">    
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Прізвище</label>
+                        <input type="text" name="area" id="surname" placeholder="Прізвище" ng-model="newClient.lastname">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ім'я</label>
+                        <input type="text" name="price" id="name" placeholder="Ім'я" ng-model="newClient.name">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Дата народження</label>
+                        <input type="date" name="birthday" id="birthday" placeholder="Дата народження" ng-model="newClient.birthdate">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Номер телефону</label>
+                        <input type="text" name="phone" id="phone" class="input-medium bfh-phone" data-number="9992255" data-format="+38(050) ddd-dd-dd" placeholder="+38(050)999-22-55" ng-model="newClient.phonenumber">
+                        <!--                                        <input type="text" name="phone" required="" id="phone">-->
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Email</label>
+                        <input type="email" name="email"id="email" placeholder="youaddress@example.com" ng-model="newClient.email">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Завантажити зображення</label>
+                        <input id="imgUpload"  name="imgUpload[]" type="file" multiple class="file-loading col-sm-8 btn-danger">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-default">Скинути</button> 
+                        <button type="submit" class="btn btn-danger">Зберегти</button> 
+                        <button type="button" class="btn btn-default" ng-click=closeThisDialog("Cancel")>Закрити</button>
+                    </div>
+                </form>
+            </div>
+        </div>

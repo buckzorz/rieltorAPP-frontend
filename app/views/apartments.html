@@ -1,0 +1,93 @@
+        <div id="mySidenav" class="sidenav">
+            <a class="closebtn" ng-click="navtracker()" onclick="closeNav()">&times;</a>
+            <form ng-submit="filterApartments()">  
+
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Призначення</label>
+                    <div class="col-xs-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-danger active">
+                            <input type="radio" name="dest" id="selling" autocomplete="off" checked value="Продаж" ng-model="filter.type"><strong>Продаж</strong>
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="dest" id="rent" autocomplete="off" value="Оренда" ng-model="filter.type"><strong>Оренда</strong>
+                        </label>
+                    </div>
+                </div> 
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Ремонт</label>
+                    <div class="col-xs-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-danger active">
+                            <input type="radio" name="renovation" id="thereIs" autocomplete="off" checked value="Є" ng-model="filter.renovation"><strong>Є</strong>
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="renovation" id="thereIsNot" autocomplete="off" value="Немає" ng-model="filter.renovation"><strong>Немає</strong>
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="renovation" id="thereIsEuro" autocomplete="off" value="Євро" ng-model="filter.renovation"><strong>Євро</strong>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Ліфт</label>
+                    <div class="col-xs-8 btn-group" data-toggle="buttons">
+                        <label class="btn btn-danger active">
+                            <input type="radio" name="lift" id="thereIs" autocomplete="off" checked value="Є" ng-model="filter.elevator"><strong>Є</strong>
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="lift" id="thereIsNot" autocomplete="off" value="Немає" ng-model="filter.elevator"><strong>Немає</strong>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Район</label>
+                    <input type="textarea" name="district" id="district" placeholder="Район" width="40px" ng-model="filter.district">
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Кімнат</label>
+                    <input type="number" name="rooms" id="rooms" placeholder="Кімнат" width="40px" ng-model="filter.rooms">
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Поверх</label>
+                    <input type="number" name="area" id="floor" placeholder="Поверх" width="40px" ng-model="filter.floor">
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Площа</label>
+                    <input type="number" name="area" id="area" placeholder="квадратних метрів" width="40px" ng-model="filter.area">
+                </div>
+                <div class="form-group has-feedback row">
+                    <label class="col-xs-4 control-label">Ціна</label>
+                    <input type="number" name="price" id="price" placeholder="пошук до __ гривень" width="40px" ng-model="filter.price">
+                </div>
+                <br>
+                <button type="reset" class="btn btn-default col-xs-offset-1 col-xs-4">Скинути</button> 
+                <button type="submit" ng-click="navtracker()" onclick="closeNav()" class="btn col-xs-offset-1 col-xs-4">Пошук</button>                               
+            </form>
+        </div>
+
+<div id="main">
+
+            <div id="wrap"> <!--main content here-->
+                
+            <div class="row" style="padding-bottom: 60px">
+                <div class="col-xs-2 pull-right" ng-if="isRieltor">
+                    <button class="btn btn-danger" ng-click="addapartment()">Додати квартиру</button>
+                </div>
+                <div class="col-xs-2" ng-if="!navopen">
+                    <button class="btn btn-danger" onclick="openNav()" ng-click="navtracker()">Відкрити фільтри</button>
+                </div>
+            </div>
+                <div class="col-xs-12" ng-if="!showMenu">
+                    <h3 style="padding-top: 60px">{{message}}</h3>
+                </div>
+                <div class="container" ng-if="showMenu">
+                    <div class="col-sm-4 col-xs-6" ng-repeat="apartment in apartments" style="padding-bottom:30px">
+                        <div class="img">
+                            <a target="_blank" ui-sref="app.apartmentDetail({id: apartment._id})">
+                                <img data-ng-src="data:image/jpeg;base64,{{apartment.image[0].base64}}" alt="appartment thumbnail"></a>
+                            <div class="desc">Ціна: {{apartment.price}} грн |  Кімнати: {{apartment.rooms}}  <br> {{apartment.district}} район</div>
+                        </div>
+                    </div>                  
+                <!-- end of main content -->
+            </div>            
+        </div>
+</div>

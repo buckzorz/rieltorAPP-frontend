@@ -1,0 +1,40 @@
+<!-- end of sidebar filter-search-->
+                <div class="container">
+                    <nav class="navbar navbar-mycolor navbar-fixed-top">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">Онлайн Ріелтор</a>
+                        </div>
+                        <div id="navbar" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li ng-class="{active: stateis('app.apartments')}"><a ui-sref="app.apartments">
+                                    <span class="fa fa-search"
+                                     aria-hidden="true"></span> Пошук по квартирам</a></li>
+                                <li ng-class="{active: stateis('app.clients')}" ng-if="isRieltor"><a ui-sref="app.clients">
+                                    <span class="fa fa-users"
+                                     aria-hidden="true"></span> Пошук по кліентам</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li ng-if="!loggedIn"><a ng-click="openLogin()">
+                                <span class="fa fa-user"></span> Авторизація</a>
+                                </li>
+                                <li ng-if="loggedIn">
+                                <a>{{username}}</a>
+                                </li>
+                                <li ng-if="loggedIn">
+                                <a ng-click="logOut()">
+                                <span class="glyphicon glyphicon-log-in"></span> Вихід</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--/.nav-collapse -->            
+                    </nav>
+                </div>
+                <!--main content here-->
+                <!-- end of main content -->

@@ -1,0 +1,105 @@
+<div class="ngdialog-message">
+            <div class="">
+                <h3>Додати нову квартиру </h3>
+            </div>
+            <div class="">&nbsp;</div>
+            <div class="">   
+                <form ng-submit="submitapartment()">  
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 control-label">Призначення</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="dest" id="selling" autocomplete="off" ng-model="apartment.type" value="Продаж"><strong>Продаж</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="dest" id="rent" autocomplete="off" ng-model="apartment.type" value="Оренда"><strong>Оренда</strong>
+                            </label>
+                        </div>
+                    </div> 
+
+
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ремонт</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="renovation" id="thereIs" autocomplete="off" ng-model="apartment.renovation" value="Є"><strong>Є</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="renovation" id="thereIsNot" autocomplete="off" ng-model="apartment.renovation" value="Немає"><strong>Немає</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="renovation" id="thereIsEuro" autocomplete="off" ng-model="apartment.renovation" value="Євро"><strong>Євро</strong>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ліфт</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="lift" id="thereIs" autocomplete="off" ng-model="apartment.elevator" value="Є"><strong>Є</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="lift" id="thereIsNot" autocomplete="off" ng-model="apartment.elevator" value="Немає"><strong>Немає</strong>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Район</label>
+                        <select class="selectpicker" name="district">
+                            <optgroup label="Правий берег">
+                                <option ng-model="apartment.district" value="Шевченківський">Шевченківський</option>
+                                <option ng-model="apartment.district" value="Печерськи">Печерський</option>
+                                <option ng-model="apartment.district" value="Подільський">Подільський</option>
+                                <option ng-model="apartment.district" value="Оболонський">Оболонський</option>
+                                <option ng-model="apartment.district" value="Святошинський">Святошинський</option>
+                                <option ng-model="apartment.district" value="Солом'янський">Солом'янський</option>
+                                <option ng-model="apartment.district" value="Голосіївський">Голосіївський</option>
+                            </optgroup>
+                            <optgroup label="Лівий берег">
+                                <option ng-model="apartment.district" value="Дніпровський">Дніпровський</option>
+                                <option ng-model="apartment.district" value="Деснянький">Деснянький</option>
+                                <option ng-model="apartment.district" value="Дарницький">Дарницький</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Кімнат</label>
+                        <input class="col-sm-2" type="number" name="rooms" id="rooms" ng-model="apartment.rooms">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Поверх</label>
+                        <input class="col-sm-2" type="number" name="floor" id="floor" ng-model="apartment.floor">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Площа</label>
+                        <input type="number" name="area" id="area" width="40px" ng-model="apartment.area">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ціна</label>
+                        <input type="number" name="price" id="price" width="40px" ng-model="apartment.price">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Адреса</label>
+                        <input type="textarea" name="address" id="address" placeholder="Адреса" width="40px" ng-model="apartment.address">
+                    </div>
+                    <!--завантаження зображення
+                    
+                    !!!! є стиль та скрипт для #imgUpload !!! 
+                    
+                    -->
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Завантажити зображення</label>
+                        <input id="imgUpload" name="imgUpload[]" type="file" multiple class="file-loading col-sm-8 btn-danger" ng-model="apartment.picture">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-default">Скинути</button> 
+                        <button type="submit" class="btn btn-danger">Зберегти</button> 
+                        <button type="button" class="btn btn-default" ng-click=closeThisDialog("Cancel")>Закрити</button>
+                    </div>
+                </form>
+            </div>
+        </div>

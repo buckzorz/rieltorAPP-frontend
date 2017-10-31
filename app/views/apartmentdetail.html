@@ -1,0 +1,121 @@
+  <div id="main">
+            <div id="wrap"> <!--для відступу для футера-->
+
+                <!--main content here-->
+                <div style="padding: 60px" ng-if="!showApartment">
+                   <h1>{{messege}}</h1> 
+                </div> 
+                <div class="container" ng-if="showApartment">
+                     <div class="row">                         
+                        <h4 style="padding-left:20px">Детальний опис квартири</h4>     
+                     </div>
+                     <div class="row">
+                         <div class="carousel slide article-slide col-xs-12 col-sm-9" id="article-photo-carousel">
+
+                             <!-- Wrapper for slides ЛЕША, ІНДИКАТОРИ ТА СЛАЙДИ МАЮТЬ БУТИ З ОДНАКОВОМУ ПОРЯДКУ-->
+                             <div class="carousel-inner cont-slider">
+
+                                 <div class="item active">
+                                     <img alt="" title="" data-ng-src="data:image/jpeg;base64,{{apartment.image[0].base64}}">
+                                 </div>
+                                 <div class="item">
+                                     <img alt="" title="" data-ng-src="data:image/jpeg;base64,{{apartment.image[1].base64}}">
+                                 </div>
+                                 <div class="item">
+                                     <img alt="" title="" data-ng-src="data:image/jpeg;base64,{{apartment.image[2].base64}}">
+                                 </div>
+                                 <div class="item">
+                                     <img alt="" title="" data-ng-src="data:image/jpeg;base64,{{apartment.image[4].base64}}">
+                                 </div>
+                             </div>
+                             <!-- Indicators -->
+                             <ol class="carousel-indicators">
+                                 <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+                                     <img alt="" data-ng-src="data:image/jpeg;base64,{{apartment.image[0].base64}}">
+                                 </li>
+                                 <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+                                     <img alt="" data-ng-src="data:image/jpeg;base64,{{apartment.image[1].base64}}">
+                                 </li>
+                                 <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+                                     <img alt="" data-ng-src="data:image/jpeg;base64,{{apartment.image[2].base64}}">
+                                 </li>
+                                 <li class="" data-slide-to="3" data-target="#article-photo-carousel">
+                                     <img alt="" data-ng-src="data:image/jpeg;base64,{{apartment.image[3].base64}}">
+                                 </li>
+                             </ol>
+                         </div>
+                         <div class="col-xs-12 col-sm-3">
+                             <table class="table table-striped">                             
+                                 <tr>
+                                     <th>Призначення</th>
+                                     <td>{{apartment.type}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Ремонт</th>
+                                     <td>{{apartment.renovation}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Ліфт</th>
+                                     <td>{{apartment.elevator}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Район</th>
+                                     <td>{{apartment.district}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Адреса</th>
+                                     <td>{{apartment.address}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Кімнат</th>
+                                     <td>{{apartment.rooms}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Поверх</th>
+                                     <td>{{apartment.floor}}</td>    
+                                 </tr>
+                                 <tr>
+                                     <th>Площа</th>
+                                     <td>{{apartment.area}}</td>    
+                                 </tr>
+                                 <tr style="color:#c74545">
+                                     <th>Ціна</th>
+                                     <td>{{apartment.price}} грн.</td>    
+                                 </tr>
+                             </table>
+                             <div class="like" ng-click="addFavorite()">
+                                 <h4><span class="fa fa-heart-o"></span> Подобається</h4>
+                             </div>
+                             <div class="like" ng-click="deleteApartment()">
+                                 <h4><span class="fa fa-times"></span> Видалити</h4>
+                             </div>
+                             <div class="like" ng-if="isRieltor">
+                                 <h4><a ng-click="editapartment()"><span class="fa fa-edit"></span> Редагувати</a></h4>
+                             </div>
+                         </div>
+                     </div>
+                 </div>   
+                <div class="container liked-apartments">   
+                    <!-- list of apartments he/she liked-->
+                    <div class="row">
+                        <h4>Схожі квартири поблизу</h4>
+                    </div>
+                    <div class="row">
+                        <div style="padding-bottom: 10px" class="col-xs-6 col-sm-4 col-lg-2" ng-repeat="apartment in suggestedApartments">
+                            <div class="img-sm">
+                                <a ui-sref="app.apartmentDetail({id: apartment._id})">
+                                    <img data-ng-src="data:image/jpeg;base64,{{apartment.image[0].base64}}" alt="appartment thumb nail" >
+                                </a>
+                                <div class="desc-sm">Ціна: {{apartment.price}} грн | Кімнат: {{apartment.rooms}} <br> {{apartment.district}} район</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of main content -->
+            </div>
+     </div>
+        <script>
+            $('.carousel').carousel({
+            interval: false
+            });
+        </script>

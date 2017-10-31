@@ -1,0 +1,89 @@
+<div class="ngdialog-message">
+            <div class="">
+                <h3>Додати нову квартиру </h3>
+            </div>
+            <div class="">&nbsp;</div>
+            <div class="">   
+                <form ng-submit="addapartment()">  
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 control-label">Призначення</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default">
+                                <input type="radio" name="dest" id="selling" autocomplete="off" checked value="Продаж" ng-model="newApartment.type"><strong>Продаж</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="dest" id="rent" autocomplete="off" value="Оренда" ng-model="newApartment.type"><strong>Оренда</strong>
+                            </label>
+                        </div>
+                    </div> 
+
+
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ремонт</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="renovation" id="thereIs" autocomplete="off" checked value="Є" ng-model="newApartment.renovation"><strong>Є</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="renovation" id="thereIsNot" autocomplete="off" value="Немає" ng-model="newApartment.renovation"><strong>Немає</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="renovation" id="thereIsEuro" autocomplete="off" value="Євро" ng-model="newApartment.renovation"><strong>Євро</strong>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ліфт</label>
+                        <div class="col-sm-8 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default active">
+                                <input type="radio" name="lift" id="thereIs" autocomplete="off" checked value="Є" ng-model="newApartment.elevator"><strong>Є</strong>
+                            </label>
+                            <label class="btn btn-default">
+                                <input type="radio" name="lift" id="thereIsNot" autocomplete="off" value="Немає" ng-model="newApartment.elevator" value="Немає"><strong>Немає</strong>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Райно</label>
+                        <input type="textarea" name="district" id="district" placeholder="Район" width="40px" ng-model="newApartment.district">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Кімнат</label>
+                        <input class="col-sm-2" type="number" name="rooms" id="rooms" ng-model="newApartment.rooms">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Поверх</label>
+                        <input class="col-sm-2" type="number" name="floor" id="floor" ng-model="newApartment.floor">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Площа</label>
+                        <input type="number" name="area" id="area" placeholder="квадратних метрів" width="40px" ng-model="newApartment.area">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Ціна</label>
+                        <input type="number" name="price" id="price" placeholder="вартість у гривнях" width="40px" ng-model="newApartment.price">
+                    </div>
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Адреса</label>
+                        <input type="textarea" name="address" id="address" placeholder="Адреса" width="40px" ng-model="newApartment.address">
+                    </div>
+                    <!--завантаження зображення
+                    
+                    !!!! є стиль та скрипт для #imgUpload !!! 
+                    
+                    -->
+                    <div class="form-group has-feedback row">
+                        <label class="col-sm-4 control-label">Завантажити зображення</label>
+                        <input id="imgUpload" class="file-loading col-sm-8 btn-danger" multiple type="file" ng-model="newApartment.image" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-default">Скинути</button> 
+                        <button type="submit" class="btn btn-danger">Зберегти</button> 
+                        <button type="button" class="btn btn-default" ng-click=closeThisDialog("Cancel")>Закрити</button>
+                    </div>
+                </form>
+            </div>
+        </div>

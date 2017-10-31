@@ -1,0 +1,59 @@
+    <div id="main">
+        <div class="row" ng-if="!showClient">
+            <h1>{{messege}}</h1>
+        </div>    
+        <div id="wrap" class="client-detail" ng-if="showClient"> <!--для відступу для футера-->
+                <div class="container">
+                    <!-- data of user-->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-4">                           
+                            <div class="img-client">   
+                                 <img src="clients/client.jpg" alt="client 1" >         
+                            </div>                            
+                        </div>
+                        <div class=" col-xs-12 col-sm-6">
+                            <table class="table">                             
+                                    <tr>
+                                        <th>Прізвище</th>
+                                        <td>{{client[0].postedBy.lastname}}</td>    
+                                    </tr>
+                                    <tr>
+                                        <th>Ім'я</th>
+                                        <td>{{client[0].postedBy.firstname}}</td>    
+                                    </tr>
+                                    <tr>
+                                        <th>Дата народження</th>
+                                        <td>{{client[0].postedBy.birthdate}}</td>    
+                                    </tr>
+                                    <tr>
+                                        <th>Номер телефона</th>
+                                        <td>{{client[0].postedBy.phonenumber}}</td>    
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>{{client[0].postedBy.email}}</td>    
+                                    </tr>   
+                            </table>
+                        </div>                  
+                    </div>
+                        
+                </div>
+                <div class="container liked-apartments">   
+                    <!-- list of apartments he/she liked-->
+                    <div class="row">
+                        <h4>Квартири, які вподобав клієнт</h4>
+                    </div>
+                    <div class="row">
+                        <div style="padding-bottom: 10px" class="col-xs-6 col-sm-4 col-lg-2" ng-repeat="apartment in client[0].apartments">
+                            <div class="img-sm">
+                                <a ui-sref="app.apartmentDetail({id: apartment._id})">
+                                    <img data-ng-src="data:image/jpeg;base64,{{apartment.image[0].base64}}" alt="appartment thumb nail" >
+                                </a>
+                                <div class="desc-sm">Ціна: {{apartment.price}} грн | Кімнат: {{apartment.rooms}} <br> {{apartment.district}} район</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+                <!-- end of main content -->
+         </div>

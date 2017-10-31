@@ -1,0 +1,381 @@
+html, body {height: 100%;}
+/*styles for navigation*/
+.navbar {
+    padding: 0px 20px;
+}
+.navbar-mycolor {
+    background-color: #9397a0;
+    border-color: #7c8088;
+}
+.navbar-mycolor .navbar-brand {
+    background-color: #df5352;
+    color: #ebe5de;
+}
+.navbar-mycolor .navbar-text {
+    color: #ebe5de;
+}
+.navbar-mycolor .navbar-nav > li > a {
+    color: #ebe5de;
+}
+.navbar-mycolor .navbar-nav > li > a:hover,
+.navbar-mycolor .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-mycolor .navbar-nav > .active > a,
+.navbar-mycolor .navbar-nav > .active > a:hover,
+.navbar-mycolor .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-mycolor .navbar-nav > .disabled > a,
+.navbar-mycolor .navbar-nav > .disabled > a:hover,
+.navbar-mycolor .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.navbar-mycolor .navbar-toggle {
+    border-color: #ebe5de;
+}
+.navbar-mycolor .navbar-toggle:hover{
+    background-color: #df5352;
+}
+.navbar-mycolor .navbar-toggle .icon-bar {
+    background-color: #ebe5de;
+}
+.navbar-mycolor .navbar-collapse,
+.navbar-mycolor .navbar-form {
+    border-color: #e7e7e7;
+}/*END of styles for navigation*/
+
+
+/*styles for footer*/
+body {
+    align-self: center;
+}
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 650px;
+}
+#wrap {
+/*    рандомне число, без контента не */
+    min-height: 700px; 
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 50px auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+#footer {
+    margin: 0px auto;
+    padding-top: 10px;;
+    background-color: #AfAfAf;
+    color: #676767;
+}
+#footer li{list-style-type: none;}
+#footer a {text-decoration: none; color: #373737;}
+#footer a:hover{color: #ebe5de}
+/*END of styles for footer*/
+
+
+/*styles for modal*/
+.btn-red {
+    background-color: #df5352;
+}
+.modal-sm {
+    width: 300px;
+    margin-left: calc(50% - 150px);
+}/*END of styles for modal*/
+
+/*STYLES FOR SLIDE MENU*/
+.sidenav {
+    height: 100%;
+    width: 0; /*за допомогою джееса змінюю*/
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    left: 0;
+    background-color: #E2E2E2;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -10px;
+    padding-top: -10px;
+    right: 10px;
+    font-size: 46px;
+    width: 30px; 
+    height: 30px;
+    color: #df5352;
+}
+/*хрестик*/
+.sidenav .closebtn:hover{    
+    text-decoration: none;
+    color: #7c8088
+}
+/*вихід сайдбару*/
+#main {
+    transition: margin-left .1s step-start;
+    padding: 16px;
+}
+
+/*форматую картинки буденків*/
+div.img img {
+    width: 100%;
+    height: 250px;
+    opacity: 0.9;
+}
+div.img img:hover {
+    opacity: 1;    
+}
+div.img {
+    border: 1px solid #ccc;	
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+    background-color: #df5352;
+    color: #f4e3d3;
+    position: relative;
+    margin-top: -5px;
+    transition: height 1s;
+}
+
+div.img-sm img {
+    width: 100%;
+    height: 100px;
+    opacity: 0.9;
+}
+div.img-sm img:hover {
+    opacity: 1;    
+}
+div.img-sm {
+    border: 1px solid #ccc;	
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+div.desc-sm {
+    padding: 5px;
+    text-align: center;
+    background-color: #df5352;
+    color: #f4e3d3;
+    position: relative;
+    margin-top: -5px;
+    transition: height 1s;
+    font-size: 10px
+}/*кінець форматування будинків*/
+
+/*для apartmentdetail.html*/
+.like {
+    color: #df5352;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.like:hover {
+    color: #f4e3d3;
+    border: 1px solid #ccc;
+    background-color: #df5352;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+/*форматую карусель-галерею*/
+/* Main carousel style */
+.carousel {
+    position: relative;
+    display: block;
+    margin: 0px;
+    float: right;
+}
+div.item.active>img {
+    height: 350px;
+    overflow: hidden;
+}
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    margin-left: 5px;
+    width: 100%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 54px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 100px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
+
+/*кінець форматування карусель-галереї*/
+
+/*for clientdetail.html*/
+div.img-client img {
+    width: auto;
+    height: 250px;
+}
+div.img-client {
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+}
+.liked-apartments {
+    border: 4px solid #ccc;
+}
+.liked-apartments>.row:first-child {
+    background-color: #ccc;   
+    margin-bottom: 10px;
+}
+/*end of clientdetail.html*/
+
+/*форматую кнопки*/
+.btn { 
+    border-radius: 1px !important;
+}
+.btn-danger{
+    color: #ebe5de;
+    background-color: #e86463;
+    border-color: #d43f3a;
+}
+button[type="submit"] {
+    color: #ebe5de;
+    background-color: #c23130;
+    border-color: #aa2e29;
+}
+/*кінець форматування кнопок*/
+
+
+/*main Page formating*/
+.mainPage{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #ccc;
+}
+.mainPicture{    
+    position: relative;    
+}
+.mainPicture>img{    
+    width: 100%;
+    overflow: hidden;  
+    filter: invert(25%);
+    z-index: 1;
+}
+.greatingWords>p{
+    text-align: center;
+}
+.greatingWords{
+    position: absolute;
+    top: 40px; 
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    font-size: 50px;
+    color: #fff;    
+    text-shadow: 1px 3px grey;
+    width: 100%;    
+}
+
+.intro h3{
+    text-align: center;
+    color: #df5352;
+}
+.instructions h3 {
+    color: #df5352;
+    padding-left: 50px;
+}
+.intro p{
+    padding: 0 15%;
+    color: #6a6d72;
+    text-align: justify;  
+    text-indent: 30px;
+}
+.instructions>ul{
+    list-style-type: none;
+}
+.instruction {
+    border: 1px solid #df5352;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px 30px;
+    margin-right: 90px;
+    margin-left: 45px;
+    text-align: justify;
+    color: #4e4f52 ;
+}
+
+     
+/*end of main Page formating*/
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    div.img-client img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+}
+/*END OF STYLES FOR SLIDE MENU*/
+
+/*styling ВИБРАТИ ФАЙЛИ кнопку для завантаження зображень у модалі*/
+#imgUpload {    
+    padding-top: 10px;
+    background: none;
+    background-color: white;
+    color: #df5352;
+}
+
+/*media for navigation*/
+@media screen and (min-width: 768px) {
+    .navbar-right {
+        margin-right: 10px;
+    }    
+    div.item.active>img {
+        height: 450px;
+        overflow: hidden;
+    }
+}
+@media screen and (min-width: 960px) {
+        
+    div.item.active>img {
+        height: 550px;
+        overflow: hidden;
+    }
+}/*END of media for navigation*/
+
+
+
+
+
+

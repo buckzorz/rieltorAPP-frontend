@@ -1,0 +1,45 @@
+    <div class="ngdialog-message">
+        <div class="">
+            <h3>Реєстрація </h3>
+        </div>
+        <div class="">&nbsp;</div>
+        <div class="">
+            <form ng-submit="doRegister()">
+                <div class="form-group">
+                    <label class="sr-only" for="username">Електронна пошта</label>
+                    <input type="text" class="form-control input-sm" id="username" placeholder="Електронна пошта" ng-model="registration.username">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="password">Пароль</label>
+                    <input type="password" class="form-control input-sm" id="password" placeholder="Пароль" ng-model="registration.password">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="firstname">І'мя</label>
+                    <input type="text" class="form-control input-sm" id="firstname" placeholder="І'мя" ng-model="registration.firstname">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="lastname">Прізвище</label>
+                    <input type="text" class="form-control input-sm" id="lastname" placeholder="Прізвище" ng-model="registration.lastname">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="phonenumber">Номер телефону</label>
+                    <input type="text" class="form-control input-sm" id="phonenumber" placeholder="Номер телефону" ng-model="registration.phonenumber">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="birthdate">Дата народження</label>
+                    <input type="text" class="form-control input-sm" id="phonenumber" placeholder="Дата народження" ng-model="registration.birthdate">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="rieltor">Ви рієлтор?</label>
+                    <input type="checkbox" id="rieltor" ng-model="registration.rieltor">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="registration.rememberMe">Запам'ятати
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-danger btn-sm">Реєстрація</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click=closeThisDialog("Cancel")>Закрити</button>
+            </form>
+        </div>
+    </div>
